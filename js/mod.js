@@ -1,14 +1,14 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
+	name: "The Doors/AcamedaMode Tree",
+	id: "crossoverdoorsacameda",
+	author: "Yggdrasil, ThePrestigeTreeGuy",
 	pointsName: "XP",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	offlineLimit: 24,  // In hours
 }
 
 // Set your version in num and name
@@ -43,6 +43,7 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('l', 11)) gain = gain.times(upgradeEffect('l', 11))
 	return gain
 }
 
