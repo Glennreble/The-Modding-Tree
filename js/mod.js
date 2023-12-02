@@ -13,8 +13,8 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0.1",
-	name: "Literally nothing v2",
+	num: "0.0.2",
+	name: "Literally nothing v3",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -45,6 +45,7 @@ function getPointGen() {
 	let gain = new Decimal(1)
 	if (hasUpgrade('l', 11)) gain = gain.times(upgradeEffect('l', 11))
 	if (hasUpgrade('l', 12)) gain = gain.times(5)
+	if (hasUpgrade('l', 13)) gain = gain.times(10)
 	return gain
 }
 
@@ -55,12 +56,12 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	"Crossover of the Doors Tree!",
-	"Endgame: 12 levels"
+	"Endgame: 15 levels"
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.l.points.gte(new Decimal(12))
+	return player.l.points.gte(new Decimal(15))
 }
 
 
