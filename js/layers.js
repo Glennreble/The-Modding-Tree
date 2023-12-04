@@ -79,7 +79,7 @@ addLayer("t", {
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return player[this.layer].unlocked || hasUpgrade("l",14);},
+    layerShown(){return hasUpgrade("l",14)||player.t.unlocked},
     upgrades: {
         11: {
         title: "Tier to XP",
