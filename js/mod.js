@@ -13,11 +13,19 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0.2",
-	name: "Literally nothing v3",
+	num: "0.1",
+	name: "Tiers",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+        <h3>v0.1 Tier</h3><br>
+	        - Added Tiers!<br>
+	        - 2 new Upgrades!<br>
+	        - Endgame: 3 Tiers<br>
+	<h3>v0.0.2</h3<br>
+                - Added an upgrade: XP Calculator!<br>
+	<h3>v0.0.1</h3<br>
+                - Added an upgrade: XP Converter!<br>	
 	<h3>v0.0</h3><br>
 		- Added things.<br>
 		- Added stuff.`
@@ -46,6 +54,8 @@ function getPointGen() {
 	if (hasUpgrade('l', 11)) gain = gain.times(upgradeEffect('l', 11))
 	if (hasUpgrade('l', 12)) gain = gain.times(5)
 	if (hasUpgrade('l', 13)) gain = gain.times(10)
+	if (hasUpgrade('l', 14)) gain = gain.times(50)
+	if (hasUpgrade('t', 11)) gain = gain.times(upgradeEffect('t', 11))
 	return gain
 }
 
@@ -56,12 +66,12 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	"Crossover of the Doors Tree!",
-	"Endgame: 15 levels"
+	"Endgame: 3 tiers"
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.l.points.gte(new Decimal(15))
+	return player.t.points.gte(new Decimal(3))
 }
 
 
