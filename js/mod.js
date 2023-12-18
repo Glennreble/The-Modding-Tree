@@ -59,7 +59,7 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-Join Florrcord now!
+"Join Florrcord now!"
 ]
 
 // Determines when the game "ends"
