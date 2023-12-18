@@ -1,44 +1,31 @@
 let modInfo = {
-	name: "The Rocket Tree",
-	id: "spaceonic2",
-	author: "Secret1000",
-	pointsName: "meters traveled",
+	name: "The Rocket Tree: The Doors Tree",
+	id: "BANNEDFGEOSOS",
+	author: "my mod",
+	pointsName: "studs",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "",
+	discordName: "FLORRCORD",
 	discordLink: "",
-	initialStartPoints: new Decimal (20), // Used for hard resets and new players
-	offlineLimit: 3,  // In hours
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	offlineLimit: 1000,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.3 Sacrifice",
-	name: "The Sacrifice",
+	num: "0.2",
+	name: "Now you can hide",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-        <h3>v0.3 Sacrifice</h3><br>
-	        - Added a row of accomplishments.<br>
-	        - Added the third layer, sacrifice.<br>
-	        - Endgame: 1,000,000 SP.<br>
-        <h3>v0.3α Saceifice</h3><br>
-		- Added infoboxes, rocket power.<br>
+	<h3>v0.2</h3><br>
+		- Added the second layer, closets.<br>
 		- Added an upgrade.<br>
-                - Changed 1 to 3 offline limit.<br>
-		- Endgame: 1e30 YFN.<br>
-        <h3>v0.2.1 Bug Fix</h3><br>
-		- Added a row of accomplishments, yfn.<br>
-		- Changed yfn to lime.<br>
-		- Endgame: 5,000 YFN.<br>
-        <h3>v0.2 Year</h3><br>
-		- Added the second layer, yfn.<br>
+		- Endgame: 10 closets.<br>
+	<h3>v0.1</h3><br>
+		- Added the first layer, doors.<br>
 		- Added an upgrade.<br>
-		- Endgame: 1,000 YFN.<br>
-	<h3>v0.1 Rocket</h3><br>
-		- Added the first layer, rocket power.<br>
-		- Added an upgrade.<br>
-		- Endgame: 100,000,000 Rocket Power.`
+		- Endgame: 5 doors.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -57,16 +44,12 @@ function canGenPoints(){
 
 // Calculate points/sec!
 function getPointGen() {
-	if(!canGenPoints())
-		return new Decimal(0)
-
+	if(!canGenPoints()
+		)return new Decimal(0)
 	let gain = new Decimal(1)
-	if (hasUpgrade('r', 11)) gain = gain.times(upgradeEffect('r', 11))
-        if (hasUpgrade('r', 12)) gain = gain.times(upgradeEffect('r', 12))
-	if (hasUpgrade('r', 13)) gain = gain.times(upgradeEffect('r', 13))
-	if (hasUpgrade('r', 14)) gain = gain.times(10)
-	if (hasUpgrade('y', 11)) gain = gain.times(upgradeEffect('y', 11))
-	if (hasUpgrade('y', 12)) gain = gain.times(upgradeEffect('y', 12))
+	if (hasUpgrade('d',11)) gain = gain.times(upgradeEffect('d', 11))
+	if (hasUpgrade('c',11)) gain = gain.times(upgradeEffect('c', 11))
+	if (hasUpgrade('d',12)) gain = gain.times(30)
 	return gain
 }
 
@@ -76,12 +59,12 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-	"Reach 1,000,000 SP to reach the endgame!"
+Join Florrcord now!
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.s.points.gte(new Decimal(1e6))
+	return player.points.gte(new Decimal("eeee100"))
 }
 
 
