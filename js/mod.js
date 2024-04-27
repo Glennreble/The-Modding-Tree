@@ -13,12 +13,12 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0.0",
+	num: "v0.0.0",
 	name: "Nothing",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0.0 Rocket</h3><br>
+	<h3>v0.0.0</h3><br>
 		- Added the first layer, beta.<br>
 		- Added an upgrade.<br>
 		- Endgame: 150 beta.`
@@ -44,7 +44,7 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
-	if (hasUpgrade('beta', 11)) gain = gain.times(5(
+	if (hasUpgrade('2', 11)) gain = gain.times(5)
 	return gain
 }
 
