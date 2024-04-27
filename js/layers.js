@@ -30,6 +30,6 @@ addLayer("2", {
         description: "Beta",
         cost: new Decimal(1),
         title: "Beta!"
-        }
+      },
     }
 })
